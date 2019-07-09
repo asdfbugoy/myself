@@ -1,0 +1,98 @@
+// Common
+
+$white: #ffffff;
+$red: #ed1a3d;
+$black: #000000;
+$dark-blue: #231F20;
+
+// Button, Icon & Link Colours
+$btn-red: $red;
+$btn-blue: #0096b3;
+$btn-light-blue: rgba(0, 150, 179, 0.5);
+$btn-very-light-blue: rgba(0, 150, 179, 0.1);
+$btn-dark-blue: $dark-blue;
+
+// Text Colours
+$txt-white: $white;
+$txt-blue: #1D3444;
+$txt-gray: #9B9B9B;
+$txt-dark-blue: $dark-blue;
+
+// Secondary Colours
+
+$s-blue: #208AE6;
+$s-green: #5CB85C;
+$s-light-blue: #5BC0DE;
+$s-orange: #F0AD4E;
+$s-red: #D9534F;
+$s-gray: #ECEEEF;
+
+// Background
+
+$bg-red: $red;
+$bg-gray: #F3F3F3;
+$bg-white: $white; 
+$bg-blue: #E8F6FD;
+$bg-dark-blue: $txt-blue;
+
+// Border
+$border-blue: $btn-blue; // #19A0D2;
+$border-gray: $txt-gray; // #A2AAAD;
+
+// $very-light-gray: #f3f3f3;
+// $light-gray: #dddddd;
+// $gray: #a2aaad;
+// $dark-gray: #9b9b9b;
+
+// $very-light-blue: rgba(0, 150, 179, 0.1); // #e8f6fd;
+// $light-blue: rgba(0, 150, 179, 0.5); // #19a0d2;
+// $blue: #0096b3;
+
+$primary-text-color: $txt-blue;
+
+$place-holder-color: $txt-gray;
+
+// image folder
+$img: '../img';
+$index-banner: '#{$img}/index-banner.jpg';
+$index-banner-tablet: '#{$img}/index-banner-tablet.png';
+$index-banner-tablet-landscape: '#{$img}/index-banner-tablet-landscape.jpg';
+$index-banner-mobile: '#{$img}/index-banner-mobile.jpg';
+$index-benefits: '#{$img}/index-background3.jpg';
+$index-benefits-mobile: '#{$img}/index-background3-mobile.jpg';
+$index-benefits-tablet: '#{$img}/index-background3-tablet.jpg';
+$index-benefits-tablet-landscape: '#{$img}/index-banner-tablet-landscape.jpg';
+
+$fonts: 'fonts';
+// include the mixins for the font-size 
+
+$min_width: 320px;
+$max_width: 1200px;
+
+$default-font-size: 16px;
+$leading-text-size: 3.000rem; // 48px
+$title-text-size: 2.250rem; // 36px;
+$title-text-inside-size: 2.000rem; // 32px;
+$sub-title-text-size: 1.500rem; // 28px; // in design it was 24px;
+$special-text-size: 1.125rem; // 18px;
+
+// will use this in utilities/font-size. will be related to html classes to use, for easy short access;
+// will ask first what will be the minimum font-size for mobile currently defaut is 16px
+
+$h1: $leading-text-size;
+$h2: $title-text-size;
+$h3: $title-text-inside-size;
+$h4: $sub-title-text-size;
+$h5: $special-text-size;
+$p: $default-font-size;
+
+$s: 0.750rem; //12px // small text ex: fractions, exponents, pills, badges
+$vs: 0.625rem; //10px // very small text // currently, its only used by process status component. might placed it there
+
+// thinking of putting these on specific components or here? Temporary use for our backtrace/backtrack reference
+
+$price-text-size: 2.000rem !important; // currently not in use, luckily the h2 has this font-size in bootstrap
+$quantity-text-size: 1.375rem !important;
+$footer-text-size: $s !important;
+
+$default-font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif';
