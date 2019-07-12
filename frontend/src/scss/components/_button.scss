@@ -1,0 +1,279 @@
+@include block("btn") {
+    font-family: "AvenirLTStd";
+    font-weight: bold;
+
+    @include modifier("primary") {
+        border: 2px solid $red;
+        border-radius: 20px;
+        background-color: $red;
+        color: $white;
+        //padding: .375rem 1.75rem;
+        // padding: 0.4rem 1.75rem;
+        padding: 7px 44px;
+
+        &:hover,
+        // &.active,
+        &:focus,
+        &:active {
+            color: $red;
+            background-color: $white;
+        }
+
+        @include state("active") {
+            color: $red;
+            background-color: $white;
+        }
+
+        // &.disabled,
+        &:disabled {
+            background-color: $red;
+            color: $white;
+        }
+
+        @include state("disabled") {
+            background-color: $red;
+            color: $white;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+    }
+
+    @include modifier("primary-inverted") {
+        border: 2px solid $red;
+        border-radius: 20px;
+        color: $red;
+        //padding: .375rem 1.75rem;
+        background-color: $white;
+        // padding: 0.4rem 1.75rem;
+        padding: 7px 44px;
+
+        &:hover,
+        // &.active,
+        &:focus,
+        &:active {
+            background-color: $red;
+            color: $white;
+        }
+
+        @include state("active") {
+            background-color: $red;
+            color: $white;
+        }
+
+        // &.disabled,
+        &:disabled {
+            background-color: $white;
+            color: $red;
+        }
+
+        @include state("disabled") {
+            background-color: $white;
+            color: $red;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+    }
+
+    @include modifier("default") {
+        border: 2px solid $dark-blue;
+        border-radius: 20px;
+        color: $dark-blue;
+        //padding: .375rem 1.75rem;
+        background-color: $white;
+        // padding: 0.4rem 1.75rem;
+        padding: 7px 44px;
+
+        &:hover,
+        // &.active,
+        &:focus,
+        &:active {
+            background-color: $dark-blue;
+            color: $white;
+        }
+
+        @include state("active") {
+            background-color: $dark-blue;
+            color: $white;
+        }
+
+        // &.disabled,
+        &:disabled {
+            background-color: $white;
+            color: $black;
+        }
+
+        @include state("disabled") {
+            background-color: $white;
+            color: $dark-blue;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+    }
+
+    @include modifier("gray") {
+        border: 2px solid $border-gray;
+        border-radius: 20px;
+        color: $black;
+        //padding: .375rem 1.75rem;
+        background-color: $white;
+        // padding: 0.4rem 1.75rem;
+        padding: 7px 44px;
+
+        &:hover,
+        // &.active,
+        &:focus,
+        &:active {
+            background-color: $bg-gray;
+            color: $black;
+        }
+
+        @include state("active") {
+            background-color: $bg-gray;
+            color: $black;
+        }
+
+        // &.disabled,
+
+        &:disabled {
+            background-color: $white;
+            color: $bg-gray;
+        }
+
+        @include state("disabled") {
+            background-color: $white;
+            color: $bg-gray;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+    }
+
+    @include modifier("trash") {
+        border: 2px solid $red;
+        border-radius: 50%;
+        background-color: $red;
+        color: $white;
+        position: relative;
+        top: 15px;
+        width: 25px;
+        height: 25px;
+        padding: 15px;
+
+        &:hover,
+        // &.active,
+        &:focus,
+        &:active {
+            color: $red;
+            background-color: $white;
+        }
+
+        @include state("active") {
+            color: $red;
+            background-color: $white;
+        }
+    }
+
+    //  &.action-btn-trash
+    @include modifier("action-trash") {
+        border: 2px solid $red;
+        border-radius: 50%;
+        background-color: $red;
+        color: $white;
+        position: absolute;
+        top: 1px;
+        width: 25px;
+        height: 25px;
+        padding: 15px;
+
+        &:hover,
+        // &.active,
+        &:focus,
+        &:active {
+            color: $red;
+            background-color: $white;
+        }
+
+        @include state("active") {
+            color: $red;
+            background-color: $white;
+        }
+    }
+
+    //  &.customer-info-btn-search
+    @include modifier("customer-info-search") {
+        color: $red;
+        background-color: $white;
+        position: absolute;
+        border: 2px solid $red;
+        border-radius: 50%;
+        margin-left: 120px;
+        border: 0;
+        bottom: 6px;
+        right: 25px;
+        width: 25px;
+        height: 25px;
+
+        &:hover,
+        // &.active,
+        &:focus,
+        &:active {
+            color: $white;
+            background-color: $red;
+        }
+
+        @include state("active") {
+            color: $white;
+            background-color: $red;
+        }
+    }
+
+    // &.icon
+
+    @include state("icon") {
+        // padding: 12px 11px;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        line-height: 36px;
+        padding: 0px;
+        .fa {
+            line-height: inherit;
+        }
+    }
+
+    // @include modifier("icon") {
+    //     border: 2px solid $red;
+    //     border-radius: 50%;
+    //     background-color: $red;
+    //     color: $white;
+    //     // padding: 3px 8px;
+    //     padding: 10px 11px;
+
+    //     &:hover,
+    //     // &.active,
+    //     &:focus,
+    //     &:active {
+    //         color: $red;
+    //         background-color: $white;
+    //     }
+
+    //     @include state("active") {
+    //         color: $red;
+    //         background-color: $white;
+    //     }
+
+    //     @include state("disabled") {
+    //         background-color: $white;
+    //         color: $red;
+    //         opacity: .65;
+    //         pointer-events: none;
+    //     }
+    // }
+
+    @include modifier("link") {
+        color: $btn-blue;
+        background-color: transparent;
+        &:hover {
+            color: $btn-blue;
+        }
+    }
+}

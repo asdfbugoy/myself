@@ -1,0 +1,45 @@
+
+$fonts:'fonts';
+//$fonts: 'https://agile.ncs.com.sg/Everest2UI/styles/everest/' + $fonts;
+//$fonts: 'https://agiledev.ncs.com.sg/SingtelGO/styles/everest/' + $fonts;
+//$fonts: './../../styles/everest/' + $fonts;
+
+@mixin fontface($name, $style, $weight, $sourcename){
+    @font-face {
+        font-family: $name;
+        font-style: $style;
+        font-weight: $weight;
+        src: url($fonts + '\/' + $sourcename + '.eot');
+        src: url($fonts + '\/' + $sourcename + '.eot?#iefix') format('embedded-opentype'), 
+        url($fonts + '\/' + $sourcename + '.woff2') format('woff2'), 
+        url($fonts + '\/' + $sourcename + '.woff') format('woff'),
+        url($fonts + '\/' + $sourcename + '.ttf') format('truetype');
+    }
+}
+
+/********* FONTS: Museo family *******/
+// @include fontface("MuseoLight", "italic", 100, "2BF328_3_0"); /* Museo-100Italic */
+@include fontface("MuseoLight", "normal", 100, "museo/Museo-100"); /* Museo-100 */
+
+@include fontface("Museo", "normal", 300, "museo/Museo-300"); /* Museo-300 */
+// @include fontface("Museo", "bold", 700, "20461A_0_0"); /* Museo-700 */
+
+@include fontface("MuseoMedium", "normal", 500, "museo/Museo-500"); /* Museo-500 */
+
+// @include fontface("MuseoHeavy", "italic", 500, "2BF328_2_0"); /* Museo-900Italic */
+// @include fontface("MuseoHeavy", "bold", 500, "2BF328_0_0"); /* Museo-900 */
+
+/********* FONTS: Avenir family *******/
+// @include fontface("AvenirLTStd", "italic", 300, "2BF328_7_0"); /* AvenirLTStd-BookOblique */
+@include fontface("AvenirLTStd", "normal", 300, "avenir/AvenirLTStd-Book"); /* AvenirLTStd-Book */
+// @include fontface("AvenirLTStd", "italic", 700, "2E3C89_0_0"); /* AvenirLTStd-HeavyOblique */
+@include fontface("AvenirLTStd", "bold", 700, "avenir/AvenirLTStd-Heavy"); /* AvenirLTStd-Heavy */
+
+// @include fontface("AvenirLTStd-Light", "italic", 100, "2BF328_9_0"); /* AvenirLTStd-LightOblique */
+// @include fontface("AvenirLTStd-Light", "normal", 100, "2BF328_8_0"); /* AvenirLTStd-Light */
+
+// @include fontface("AvenirLTStd-Medium", "italic", 500, "2E3C89_1_0"); /* AvenirLTStd-MediumOblique */
+// @include fontface("AvenirLTStd-Medium", "normal", 500, "2BF328_6_0"); /* AvenirLTStd-Medium */
+
+// @include fontface("AvenirLTStd-Black", "italic", 900, "2BF328_4_0"); /* AvenirLTStd-BlackOblique */
+// @include fontface("AvenirLTStd-Black", "normal", 900, "2BF328_B_0"); /* AvenirLTStd-Black */

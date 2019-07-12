@@ -1,0 +1,13 @@
+.header {
+    display: block;
+    border-top: 5px solid $red;
+    background-color: $dark-blue;
+    color: $white;
+
+    a {
+        color: $white;
+        &:hover {
+            color: $txt-gray;
+        }
+    }
+}

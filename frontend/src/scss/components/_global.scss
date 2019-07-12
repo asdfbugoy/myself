@@ -1,0 +1,13 @@
+html, body {
+	font-family: 'AvenirLTStd';
+	font-size: $default-font-size;
+	color: $primary-text-color;
+}
+
+a {
+	color: $btn-blue;
+
+	&:hover {
+		color: $btn-blue;
+	}
+}

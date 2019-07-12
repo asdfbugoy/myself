@@ -3,12 +3,11 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-// const todoRoutes = express.Router();
 const PORT = 4001;
 
-const initialRoutes = express.Router();
+const todoRoutes = express.Router();
 
-// let Todo = require('./todo.model');
+let Todo = require('./model/todo');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -20,11 +19,15 @@ connection.once('open', function () {
     console.log("MongoDB database connection established successfully");
 })
 
-initialRoutes.route('/').get(function(req, res) {
-    const data = {
-        name: 'francis'
-    }
-    res.json(data);
+todoRoutes.route('/').get(function (req, res) {
+    Todo.find(function (err, todos) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(todos);
+            console.log(todos);
+        }
+    })
 })
 
 // todoRoutes.route('/').get(function (req, res) {
@@ -90,7 +93,7 @@ initialRoutes.route('/').get(function(req, res) {
 
 // app.use('/todos', todoRoutes);
 
-app.use('/', initialRoutes);
+app.use('/todos', todoRoutes);
 
 app.listen(PORT, function () {
     console.log("Server is running on Port: " + PORT);
