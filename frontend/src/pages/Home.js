@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Home = () => <React.Fragment>
-    Home Page
+    <div>Home Page 1</div>
 </React.Fragment>
 
 export default Home

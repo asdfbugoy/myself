@@ -1,7 +1,9 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Todos = props => {
+    const { data } = props
     return <table className="table table-bordered">
         <thead>
             <tr>
@@ -11,25 +13,26 @@ const Todos = props => {
                 <td>status</td>
             </tr>
         </thead>
-        <tbody>{this.state.todos.map((d, i) => <Todo data={d} />)}</tbody>
+        <tbody>{data.map((d, i) => <Todo key={i} data={d} />)}</tbody>
     </table>
 }
 
 const Todo = props => {
     const { data } = props
-    return <tr>
+    return <tr style={{ textDecoration: data.status ? 'line-through' : '' }}>
         <td>{data.title}</td>
         <td>{data.description}</td>
         <td>{data.priority}</td>
-        <td>{data.status}</td>
+        <td>{data.status ? 'COMPLETED' : 'PENDING'}</td>
     </tr>
 }
 
-class RoadMap extends React.Component {
+class List extends React.PureComponent {
     state = {
         todos: []
     }
     componentDidMount() {
+        console.log(this.props)
         this.fetchTodo()
     }
     fetchTodo() {
@@ -41,23 +44,18 @@ class RoadMap extends React.Component {
                 console.log(error);
             })
     }
-    todos() {
-        return <table className="table table-bordered">
-            <thead>
-                <tr>
-                    <td>title</td>
-                    <td>description</td>
-                    <td>priority</td>
-                    <td>status</td>
-                </tr>
-            </thead>
-            <tbody>{this.state.todos.map((d, i) => <Todo data={d} />)}</tbody>
-        </table>
-    }
     render() {
-        return this.todos()
+        return <React.Fragment>
+            <div>
+                <div className="row">
+                    <div className="col"><div className="h1">List</div></div>
+                    <div className="col-auto"><Link to={`${this.props.match.url}/create`} className="btn btn--primary">ADD</Link></div>
+                </div>
+                <Todos data={this.state.todos} />
+            </div>
+        </React.Fragment>
     }
 }
-export default RoadMap
+export default List
 
 
