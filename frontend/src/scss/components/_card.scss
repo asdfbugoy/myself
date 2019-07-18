@@ -1,0 +1,139 @@
+// Card as container
+
+// Card as link
+
+// @import "./../mixins";
+
+@include block("card") {
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    @include modifier("container") {
+        border-width: 2px;
+        border-style: solid;
+        border-color: transparent;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+
+        @include state("bg-blue") {
+            background-color: $bg-blue;
+        }
+
+        @include state("active") {
+            border-color: $border-blue;
+        }
+
+        @include block("body") {
+            padding: 10px;
+            // @include fluid-type($min_width, $max_width, $default-font-size, 18px);
+            @include media-breakpoint-up(lg) {
+                padding: 30px;
+            }
+        }
+    }
+
+    @include modifier("link") {
+        border: 1px solid $border-gray;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $border-gray;
+        text-decoration: none;
+        color: $dark-blue;
+
+        cursor: pointer;
+        // below are additional support for button
+        width: 100%;
+        align-items: normal;
+        padding: 0px;
+        outline: none !important;
+
+        @include block("body") {
+            @include fluid-type($min_width, $max_width, $default-font-size, 18px);
+            text-align: center;
+            @include media-breakpoint-up(xs) {
+                padding: 43px 10px;
+            }
+        }
+
+        @include state("price") {
+            border-width: 2px;
+            border-color: transparent;
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+
+            @include block("icon") {
+                @include fluid-type($min_width, $max_width, $default-font-size, 30px);
+            }
+
+            &:hover {
+                border-width: 2px;
+                border-style: solid;
+            }
+        }
+
+        @include block("icon") {
+            color: $txt-gray;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            @include fluid-type($min_width, $max_width, $default-font-size, 20px);
+        }
+
+        &:hover {
+            border-color: $border-blue;
+            text-decoration: none;
+            color: $txt-blue;
+        }
+
+        @include state("active") {
+            border-color: $border-blue;
+
+            @include block("icon") {
+                color: $red;
+            }
+        }
+
+        @include state("inactive") {
+            color: $txt-gray;
+            border-color: $border-gray;
+            border-style: dashed;
+            cursor: default;
+
+            @include block("icon") {
+                color: $txt-gray;
+            }
+
+            &:hover {
+                border-style: dashed;
+            }
+        }
+    }
+
+    @include block("ribbon") {
+        height: 36px;
+        line-height: 32px;
+        margin-top: 10px;
+        color: $white;
+        position: absolute;
+        // css for right-side
+        background-image: url('#{$img}/ribbon-right.png');
+        width: 165px;
+        margin-right: -10px;
+        right: 0px;
+
+        @include state("left") {
+            background-image: url('#{$img}/ribbon.png');
+            width: 156px;
+            margin-left: -10px;
+            left: 0px;
+        }
+    }
+}
+
+// against BEM but need support for button
+
+// button.card {
+//     width: 100%;
+//     align-items: normal;
+//     padding: 0px;
+//     outline: none !important;
+// }

@@ -21,19 +21,20 @@ const App = () => <BrowserRouter>
             </div>
         </div>
     </div>
-
-    <div className="main container py-5">
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/roadmap" component={RoadMap} />
-            <Route component={Error404} />
-        </Switch>
+    <div className="main">
+        <div className="container py-5">
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/roadmap" component={RoadMap} />
+                <Route component={Error404} />
+            </Switch>
+        </div>
     </div>
 
     <div className="footer py-4">
         <div className="container">
             <div className="row">
-                <div className="col">Francis Samande Declaro::MySelf</div>
+                <div className="col">Francis Samande Declaro</div>
                 <div className="col-auto">francissd@ncs.com.sg</div>
             </div>
         </div>
